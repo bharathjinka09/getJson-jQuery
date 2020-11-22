@@ -5,18 +5,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  // $("button").click(function(){
+  $("button").click(function(){
     $.getJSON("https://jsonplaceholder.typicode.com/posts", function(result){
       $.each(result, function(i, field){
         $("div").append(`
-        	
+        	<span class="card card-body">
             <h2>${field.id}. ${field.title}</h2>
         	<p>${field.body}</p>
+            </span>
             
+            <br>
         `);
       });
     });
-  //});
+  });
 });
 </script>
 </head>
@@ -27,7 +29,7 @@ $(document).ready(function(){
 <br>
 <br>
 
-<div class="card card-body"></div>
+<div></div>
 
 </body>
 </html>
