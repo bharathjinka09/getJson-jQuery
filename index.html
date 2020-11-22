@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // $("button").click(function(){
+    $.getJSON("https://jsonplaceholder.typicode.com/posts", function(result){
+      $.each(result, function(i, field){
+        $("div").append(`
+        	
+            <h2>${field.id}. ${field.title}</h2>
+        	<p>${field.body}</p>
+            
+        `);
+      });
+    });
+  //});
+});
+</script>
+</head>
+<body class="container mt-3">
+
+<button class="btn btn-info">Get JSON data</button>
+
+<br>
+<br>
+
+<div class="card card-body"></div>
+
+</body>
+</html>
+
